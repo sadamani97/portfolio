@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-darkBg: #050505;
+  --color-neonCyan: #00f3ff;
+  --color-neonPurple: #bc13ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-darkBg);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+}
+
+.cursor-follower {
+  pointer-events: none;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+}
