@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   const [status, setStatus] = useState('idle'); // idle | sending | success
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
     setTimeout(() => setStatus('success'), 1500);
@@ -27,7 +27,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
           <div className="lg:col-span-2 space-y-8">
             <div className="glass p-8 rounded-3xl space-y-6">
               <h3 className="text-2xl font-bold text-white">Contact Details</h3>
@@ -35,29 +34,41 @@ const Contact = () => {
                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
               </p>
               <div className="space-y-4">
-                <a href="mailto:your-email@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-neonCyan transition-colors group">
-                  <div className="p-3 bg-white/5 rounded-xl group-hover:neon-glow-cyan transition-all">
+                <a
+                  href="mailto:sadamanism97@gmail.com"
+                  className="flex items-center gap-4 text-gray-300 hover:text-[#bc13ff] transition-colors group"
+                >
+                  <div className="p-3 bg-[#bc13ff]/10 border border-[#bc13ff]/30 rounded-xl text-[#bc13ff] group-hover:shadow-[0_0_16px_rgba(188,19,255,0.45)] transition-all">
                     <FaEnvelope />
                   </div>
-                  <span>your-email@gmail.com</span>
+                  <span>sadamanism97@gmail.com</span>
                 </a>
-                <a href="https://linkedin.com/in/your-profile" className="flex items-center gap-4 text-gray-300 hover:text-neonCyan transition-colors group">
-                  <div className="p-3 bg-white/5 rounded-xl group-hover:neon-glow-cyan transition-all">
+                <a
+                  href="https://www.linkedin.com/in/sadamani-s-8b3067364"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-300 hover:text-[#5b9bd5] transition-colors group"
+                >
+                  <div className="p-3 bg-[#0a66c2]/15 border border-[#0a66c2]/40 rounded-xl text-[#5b9bd5] group-hover:shadow-[0_0_16px_rgba(10,102,194,0.45)] transition-all">
                     <FaLinkedin />
                   </div>
-                  <span>LinkedIn Profile</span>
+                  <span>linkedin.com/in/sadamani-s</span>
                 </a>
-                <a href="https://github.com/your-profile" className="flex items-center gap-4 text-gray-300 hover:text-neonCyan transition-colors group">
-                  <div className="p-3 bg-white/5 rounded-xl group-hover:neon-glow-cyan transition-all">
+                <a
+                  href="https://github.com/sadamani97"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-300 hover:text-neonCyan transition-colors group"
+                >
+                  <div className="p-3 bg-[#00f3ff]/10 border border-[#00f3ff]/30 rounded-xl text-neonCyan group-hover:neon-glow-cyan transition-all">
                     <FaGithub />
                   </div>
-                  <span>GitHub Portfolio</span>
+                  <span>github.com/sadamani97</span>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-3">
             <motion.form
               onSubmit={handleSubmit}
@@ -90,7 +101,7 @@ const Contact = () => {
               <div className="space-y-2 mb-8">
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-2">Message</label>
                 <textarea
-                  rows="4"
+                  rows={4}
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-neonCyan transition-all"
                   placeholder="Tell me about your project..."

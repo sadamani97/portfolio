@@ -1,9 +1,16 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaDatabase, FaGithub, FaCode, FaTerminal, FaServer, FaLayerGroup } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiMongodb, SiMysql, SiPostman } from 'react-icons/si';
+import type { IconType } from 'react-icons';
 
-const SkillCard = ({ icon: Icon, name, level, color }) => (
+interface SkillCardProps {
+  icon: IconType;
+  name: string;
+  level: number;
+  color: string;
+}
+
+const SkillCard = ({ icon: Icon, name, level, color }: SkillCardProps) => (
   <motion.div
     whileHover={{ scale: 1.05, y: -10 }}
     className="glass p-6 rounded-2xl relative overflow-hidden group cursor-default"

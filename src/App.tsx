@@ -1,4 +1,3 @@
-import React from 'react';
 import { SmoothScroll, CustomCursor } from './components/animations/GlobalEffects';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
